@@ -8,13 +8,26 @@ this is the module base_module.py
 class BaseModel():
     """Base Model class"""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         pending
         """
-        self.id = str(uuid.uuid4());
-        self.created_at = datetime.today()
-        self.updated_at = datetime.today()
+        if kwargs:
+            for k, v in kwargs.items():
+                if k == 'created_at' or k == 'updated_at':
+                    v = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
+                if k != '__class__':
+                    setattr(self, k, v)
+
+        try:
+            self.id
+        except Exception:
+            self.id = str(uuid.uuid4())
+        try:
+            self.created_at
+        except Exception:
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
@@ -29,7 +42,7 @@ class BaseModel():
         """
         pending
         """
-        self.updated_at = datetime.today()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """
@@ -43,13 +56,3 @@ class BaseModel():
                     v = v.isoformat()
                 d[k] = v
         return d
-
-my_model = BaseModel()
-print(my_model)
-my_model.save()
-print(my_model)
-my_model_json = my_model.to_dict()
-print(my_model_json)
-print("JSON of my_model:")
-for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
