@@ -31,7 +31,6 @@ class BaseModel():
             self.updated_at = datetime.now()
         
         if (kwargs != None):
-            print("eeee")
             models.storage.new(self)
 
     def __str__(self):
