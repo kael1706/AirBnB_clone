@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
+import models
 
 """
 this is the module base_module.py
@@ -28,6 +29,10 @@ class BaseModel():
         except Exception:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+        
+        if (kwargs != None):
+            print("eeee")
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -43,6 +48,8 @@ class BaseModel():
         pending
         """
         self.updated_at = datetime.now()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         """
