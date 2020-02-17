@@ -207,5 +207,18 @@ class HBNBCommand(cmd.Cmd):
         except Exception:
             return my_input
 
+    def do_count(self, my_input):
+        """ pending """
+        try:
+            my_cmd = shlex.split(my_input)
+        except Exception:
+            return
+        c = 0
+        for k, item in storage.all().items():
+            if item.__class__.__name__ == str(my_cmd[0]):
+                c += 1
+        print(c)
+        return
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
