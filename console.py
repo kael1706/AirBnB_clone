@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
 
-    def do_EOF(self, line):
+    def do_EOF(self, my_input):
         """
         ctrl+d (event)
         """
@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
         """
         pass
 
-    def do_quit(self, line):
+    def do_quit(self, my_input):
         """
         quit (event)
         """
@@ -186,6 +186,26 @@ class HBNBCommand(cmd.Cmd):
         setattr(storage.all()[k], 'updated_at', datetime.now())
         storage.save()
         return
+
+    def precmd(self, my_input):
+        """Precommand method"""
+        try:
+            tmp1 = my_input.split('.')
+            try:
+                item = eval(tmp1[0] + '()')
+                if not isinstance(item, BaseModel):
+                    raise Exception
+            except Exception:
+                return my_input
+            my_class = tmp1[0]
+            tmp2 = tmp1[1].split('(')
+            my_cmd = tmp2[0]
+            my_args = tmp2[1][:-1]
+            list_args = my_args.split(',')
+            new_cmd = ' '.join(list_args)
+            return " ".join([my_cmd, my_class, new_cmd])
+        except Exception:
+            return my_input
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
