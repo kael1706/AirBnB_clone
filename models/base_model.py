@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""
+this is the module base_module.py
+"""
 import uuid
 from datetime import datetime
 import models
 
-"""
-this is the module base_module.py
-"""
+
 class BaseModel():
     """Base Model class"""
 
@@ -29,7 +30,7 @@ class BaseModel():
         except Exception:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-        
+
         """if (kwargs != None):
             models.storage.new(self)"""
 
