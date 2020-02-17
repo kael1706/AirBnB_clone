@@ -100,12 +100,11 @@ class HBNBCommand(cmd.Cmd):
         if len(my_cmd) < 2:
             print("** instance id missing **")
             return
-
         k = my_cmd[0] + '.' + my_cmd[1]
         if k not in storage.all():
             print("** no instance found **")
             return
-        del(storage.all()[k])
+        del storage.all()[k]
         storage.save()
         return
 

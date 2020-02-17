@@ -30,8 +30,8 @@ class BaseModel():
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
         
-        if (kwargs != None):
-            models.storage.new(self)
+        """if (kwargs != None):
+            models.storage.new(self)"""
 
     def __str__(self):
         """
