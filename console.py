@@ -27,6 +27,12 @@ class HBNBCommand(cmd.Cmd):
         print('')
         return True
 
+    def emptyline(self):
+        """
+        manage empty line
+        """
+        pass
+
     def do_quit(self, line):
         """
         quit (event)
