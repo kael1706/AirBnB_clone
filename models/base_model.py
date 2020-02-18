@@ -29,7 +29,7 @@ class BaseModel():
             self.created_at
         except Exception:
             self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.updated_at = self.created_at
 
         """if (kwargs != None):
             models.storage.new(self)"""
