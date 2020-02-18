@@ -10,8 +10,12 @@ class TestUser(unittest.TestCase):
 
     def test_create_user(self):
         """pending"""
-        self.user1 = User()
+        self.u1 = User()
         User.email = ''
         User.password = ''
         User.first_name = ''
         User.last_name = ''
+
+    def test_uuid(self):
+        """pending"""
+        self.assertTrue(hasattr(self.u1, 'id'))
