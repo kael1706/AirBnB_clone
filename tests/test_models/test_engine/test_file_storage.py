@@ -23,5 +23,9 @@ class TestFileStorageModel(unittest.TestCase):
         """pending"""
         self.assertTrue(hasattr(FileStorage, '_FileStorage__file_path'))
 
+    def test_file_obj(self):
+        """pending"""
+        self.assertTrue(hasattr(FileStorage, '_FileStorage__objects'))
+
 if __name__ == '__main__':
     unittest.main()
