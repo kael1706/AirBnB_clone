@@ -14,5 +14,14 @@ class TestFileStorageModel(unittest.TestCase):
         my_class = FileStorage()
         self.assertIsInstance(my_class, FileStorage)
 
+    def test_insert_attr(self):
+        """pending"""
+        FileStorage._FileStorage__file_path = 'file.json'
+        FileStorage._FileStorage__objects = {}
+
+    def test_file_path(self):
+        """pending"""
+        self.assertTrue(hasattr(FileStorage, '_FileStorage__file_path'))
+
 if __name__ == '__main__':
     unittest.main()
