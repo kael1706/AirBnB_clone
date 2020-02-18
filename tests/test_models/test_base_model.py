@@ -12,5 +12,9 @@ class TestBaseModel(unittest.TestCase):
         """pending"""
         self.bm1 = BaseModel()
 
+    def test_uuid(self):
+        """pending"""
+        self.assertTrue(hasattr(self.bm1, 'id'))
+
 if __name__ == '__main__':
     unittest.main()
