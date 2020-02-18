@@ -11,8 +11,8 @@ class TestFileStorageModel(unittest.TestCase):
     """FileStorage class unittests"""
     def test_is_an_instance(self):
         """check if my_class is an instance of BaseModel"""
-        my_class = FileStorage()
-        self.assertIsInstance(my_class, FileStorage)
+        fs1 = FileStorage()
+        self.assertIsInstance(fs1, FileStorage)
 
     def test_insert_attr(self):
         """defining test suite"""
@@ -42,6 +42,12 @@ class TestFileStorageModel(unittest.TestCase):
     def test_objects_value(self):
         """test that the returned objects is a dictionary"""
         self.assertTrue(isinstance(FileStorage._FileStorage__objects, dict))
+
+     def test_all(self):
+        """Test the all() method in class FileStorage"""
+        fs2 = FileStorage()
+        FileStorage._FileStorage__objects = {'k': 'j'}
+        self.assertEqual(FileStorage._FileStorage__objects, fs2.all())
 
 if __name__ == '__main__':
     unittest.main()
