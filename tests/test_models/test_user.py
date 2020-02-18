@@ -5,8 +5,9 @@ import unittest
 import models
 from models.user import User
 
+
 class TestUser(unittest.TestCase):
-    """pending"""
+    """class User"""
 
     def test_create_user(self):
         """pending"""

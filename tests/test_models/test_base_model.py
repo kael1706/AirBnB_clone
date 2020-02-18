@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 
 
 class TestBaseModel(unittest.TestCase):
-    """pending"""
+    """test class BaseModel"""
     def test_create_model(self):
         """pending"""
         self.bm1 = BaseModel()
