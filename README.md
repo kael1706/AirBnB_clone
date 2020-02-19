@@ -6,6 +6,10 @@ Web application that simulates some of the features of Airbnb for academic purpo
 In this moment we are the first part "the console"
 The console is a way of using the typical functionalities of an administrative panel (for example CRUD) but without a graphical interface because, as its name implies, it is done from a command console.
 
+<img src="./assets/step1.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
 ## Prerequisites 📋
 
 64-bit system , Ubuntu 
