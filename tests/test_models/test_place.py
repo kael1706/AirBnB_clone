@@ -15,7 +15,7 @@ class TestPlace(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.p1 = Place()
-        time.sleep(0.2)
+        # time.sleep(0.2)
         self.p2 = Place()
         Place.city_id = ''
         Place.user_id = ''
@@ -166,3 +166,6 @@ class TestPlace(unittest.TestCase):
         output = "[{}] ({}) {}".format(
             self.p1.__class__.__name__, self.p1.id, self.p1.__dict__)
         self.assertEqual(str(self.p1), output)
+
+if __name__ == '__main__':
+    unittest.main()

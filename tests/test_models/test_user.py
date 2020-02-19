@@ -15,7 +15,7 @@ class TestUser(unittest.TestCase):
     def setUp(self):
         """should can"""
         self.u1 = User()
-        time.sleep(0.2)
+        # time.sleep(0.2)
         self.u2 = User()
         User.email = ''
         User.password = ''
