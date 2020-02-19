@@ -4,9 +4,9 @@ import os
 import unittest
 import models
 from models.city import City
-import time
 from models.base_model import BaseModel
 from datetime import datetime
+
 
 class TestCity(unittest.TestCase):
     """test class City"""
@@ -14,7 +14,6 @@ class TestCity(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.c1 = City()
-        time.sleep(1)
         self.c2 = City()
         City.state_id = ''
         City.name = ''
@@ -88,14 +87,14 @@ class TestCity(unittest.TestCase):
         self.c1 = City(**attrs)
         self.assertEqual(attrs['id'], self.c1.id)
 
-    def test_name(self):
-        """Testing first name"""
+    def test_state_id(self):
+        """Testing state_id"""
         self.assertTrue(hasattr(self.c1, 'state_id'))
         self.assertTrue(isinstance(self.c1.state_id, str))
         self.assertEqual(self.c1.state_id, '')
 
     def test_last_name(self):
-        """Testing last name"""
+        """Testing name"""
         self.assertTrue(hasattr(self.c1, 'name'))
         self.assertTrue(isinstance(self.c1.name, str))
         self.assertEqual(self.c1.name, '')

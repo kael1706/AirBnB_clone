@@ -4,9 +4,9 @@ import os
 import unittest
 import models
 from models.user import User
-import time
 from models.base_model import BaseModel
 from datetime import datetime
+
 
 class TestUser(unittest.TestCase):
     """class User"""
@@ -14,7 +14,6 @@ class TestUser(unittest.TestCase):
     def setUp(self):
         """should can"""
         self.u1 = User()
-        time.sleep(1)
         self.u2 = User()
         User.email = ''
         User.password = ''

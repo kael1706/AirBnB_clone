@@ -5,7 +5,6 @@ import unittest
 import models
 from models.state import State
 from models.base_model import BaseModel
-import time
 from datetime import datetime
 
 
