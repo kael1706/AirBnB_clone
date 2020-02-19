@@ -137,5 +137,5 @@ class TestUser(unittest.TestCase):
             self.u1.__class__.__name__, self.u1.id, self.u1.__dict__)
         self.assertEqual(str(self.u1), output)
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
