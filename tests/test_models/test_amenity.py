@@ -17,7 +17,6 @@ class TestAmenity(unittest.TestCase):
         self.a1 = Amenity()
         time.sleep(0.2)
         self.a2 = Amenity()
-        Amenity.state_id = ''
         Amenity.name = ''
 
     def test_uuid(self):
