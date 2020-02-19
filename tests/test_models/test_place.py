@@ -167,5 +167,31 @@ class TestPlace(unittest.TestCase):
             self.p1.__class__.__name__, self.p1.id, self.p1.__dict__)
         self.assertEqual(str(self.p1), output)
 
+    def test_docstring(self):
+        """test docstring for the module and the class"""
+
+        self.assertIsNotNone(models.place.__doc__,
+            "No docstring in the module"
+                                        )
+        self.assertIsNotNone(Place.__doc__, "No docstring in the class")
+
+    def test_permissions_file(self):
+        """Test File place.py permissions"""
+
+        test_file = os.access("models/place.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/place.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/place.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
+
+    def test_type_object(self):
+        """Test type object of Place"""
+
+        self.assertEqual(
+            str(type(self.p1)),
+            "<class 'models.place.Place'>")
+        self.assertIsInstance(self.p1, Place)
+
 if __name__ == '__main__':
     unittest.main()
