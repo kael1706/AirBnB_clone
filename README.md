@@ -6,6 +6,10 @@ Web application that simulates some of the features of Airbnb for academic purpo
 In this moment we are the first part "the console"
 The console is a way of using the typical functionalities of an administrative panel (for example CRUD) but without a graphical interface because, as its name implies, it is done from a command console.
 
+<img src="./assets/step1.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
 ## Prerequisites 📋
 
 64-bit system , Ubuntu 
@@ -56,8 +60,45 @@ The console will be a tool to validate this storage engine
 `./console.py`
 
 ### How to use the console?
+1. Start the console
+2. Write the desired command with its respective syntax
+
+Available classes: BaseModel, User, Place, State, City, Amenity and Review
+
+| Command| Syntax| Description|
+|---|---|---|
+|create|`create <class>`|...|
+|show|`show <class> <id>`|...|
+|destroy|`destroy <class> <id>`|...|
+|all|`all <class>`|...|
+|all|`all`|...|
+|update|`update <class> <attr_name> <new_value>`|...|
+
+other way...
+
+| Command| Syntax| Description|
+|---|---|---|
+|all|`<class name>.all()`|...|
+|count|`<class name>.count()`|...|
+|show|`<class name>.show(<id>)`|...|
+|destroy|`<class name>.destroy(<id>)`|...|
+|update|`<class name>.update(<id>, <attribute name>, <attribute value>)`|...|
+
+
+3. Press the enter button
 
 ### Examples:
+- `(hbnb) create User`
+- `(hbnb) show User fce12f8a `
+- `(hbnb) destroy User fce12f8a `
+- `(hbnb) all User `
+- `(hbnb) all`
+- `(hbnb) update User name holberton`
+- `(hbnb) User.all()`
+- `(hbnb) User.count()`
+- `(hbnb) User.show("246c227a")`
+- `(hbnb) User.destroy("246c227a")`
+- `(hbnb) User.update("38f22813-2753-4d42-b37c-57a17f1e4f88", "first_name", "John")`
 
 ## Author :copyright:
 * **Carlos Daniel Cortez** - [kael1706](https://github.com/kael1706)
