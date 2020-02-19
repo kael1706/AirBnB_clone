@@ -7,6 +7,7 @@ from models.base_model import BaseModel
 from datetime import datetime
 import time
 
+
 class TestBaseModel(unittest.TestCase):
     """test class BaseModel"""
 
@@ -47,7 +48,7 @@ class TestBaseModel(unittest.TestCase):
     def test_create_update_equal(self):
         """should have the same date and time"""
         self.assertEqual(self.bm1.created_at, self.bm1.updated_at)
-    
+
     def test_created_not_equal1(self):
         """should have diferent date and time"""
         self.assertNotEqual(self.bm1.created_at, self.bm2.created_at)

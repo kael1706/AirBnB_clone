@@ -57,7 +57,7 @@ class TestUser(unittest.TestCase):
     def test_create_update_equal(self):
         """should have the same date and time"""
         self.assertEqual(self.u1.created_at, self.u1.updated_at)
-    
+
     def test_created_not_equal1(self):
         """should have diferent date and time"""
         self.assertNotEqual(self.u1.created_at, self.u2.created_at)

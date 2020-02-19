@@ -43,7 +43,7 @@ class TestFileStorageModel(unittest.TestCase):
         """test that the returned objects is a dictionary"""
         self.assertTrue(isinstance(FileStorage._FileStorage__objects, dict))
 
-     def test_all(self):
+    def test_all(self):
         """Test the all() method in class FileStorage"""
         fs2 = FileStorage()
         FileStorage._FileStorage__objects = {'k': 'j'}

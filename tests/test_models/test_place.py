@@ -64,7 +64,7 @@ class TestPlace(unittest.TestCase):
     def test_create_update_equal(self):
         """should have the same date and time"""
         self.assertEqual(self.p1.created_at, self.p1.updated_at)
-    
+
     def test_created_not_equal1(self):
         """should have diferent date and time"""
         self.assertNotEqual(self.p1.created_at, self.p2.created_at)
@@ -95,7 +95,6 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(Place.latitude, 0.0)
         self.assertEqual(Place.longitude, 0.0)
         self.assertEqual(Place.amenity_ids, [])
-        
 
     def test_value_attrs(self):
         """testing value of attr"""
@@ -119,19 +118,23 @@ class TestPlace(unittest.TestCase):
 
     def test_many_attrs(self):
         """Testing state_id"""
-        n = ['city_id', 'user_id', 'name',
+        n = [
+            'city_id', 'user_id', 'name',
             'description', 'number_rooms', 'number_bathrooms',
             'max_guest', 'price_by_night', 'latitude', 'longitude',
-            'amenity_ids']
-        t = {'0':str, '1':str, '2':str,
-            '3':str, '4':int, '5':int,
-            '6':int, '7':int, '8':float, '9':float,
-            '10':list}
+            'amenity_ids'
+            ]
+        t = {
+            '0': str, '1': str, '2': str,
+            '3': str, '4': int, '5': int,
+            '6': int, '7': int, '8': float,
+            '9': float, '10': list
+            }
         for k, v in enumerate(n):
             tmp = t[str(k)]
-            if k>=0 and k<=3:
+            if k >= 0 and k <= 3:
                 tmp2 = ''
-            elif k>=4 and k<=7:
+            elif k >= 4 and k <= 7:
                 tmp2 = 0
             elif k == 8 or k == 9:
                 tmp2 = 0.0
@@ -140,7 +143,7 @@ class TestPlace(unittest.TestCase):
             self.assertTrue(hasattr(self.p1, v))
             self.assertTrue(isinstance(eval('self.p1.'+v), tmp))
             self.assertEqual(eval('self.p1.'+v), tmp2)
-    
+
     def test_to_dict(self):
         """ testing create and update """
         date_frmt = "%Y-%m-%dT%H:%M:%S.%f"

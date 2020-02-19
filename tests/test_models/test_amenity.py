@@ -54,7 +54,7 @@ class TestAmenity(unittest.TestCase):
     def test_create_update_equal(self):
         """should have the same date and time"""
         self.assertEqual(self.a1.created_at, self.a1.updated_at)
-    
+
     def test_created_not_equal1(self):
         """should have diferent date and time"""
         self.assertNotEqual(self.a1.created_at, self.a2.created_at)
