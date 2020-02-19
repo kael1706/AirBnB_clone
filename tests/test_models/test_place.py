@@ -161,3 +161,6 @@ class TestPlace(unittest.TestCase):
         output = "[{}] ({}) {}".format(
             self.p1.__class__.__name__, self.p1.id, self.p1.__dict__)
         self.assertEqual(str(self.p1), output)
+
+if __name__ == '__main__':
+    unittest.main()

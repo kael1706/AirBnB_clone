@@ -97,5 +97,5 @@ class TestState(unittest.TestCase):
             self.s1.id, self.s1.__dict__)
         self.assertEqual(str(self.s1), output)
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
