@@ -21,6 +21,11 @@ class TestReview(unittest.TestCase):
         Review.user_id = ''
         Review.text = ''
 
+    def test_create(self):
+        """know egain if i can create a instance."""
+        self.r3 = Review()
+        self.assertTrue(hasattr(self.r3, 'id'))
+
     def test_uuid(self):
         """know if id exist"""
         self.assertTrue(hasattr(self.r1, 'id'))

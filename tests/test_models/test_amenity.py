@@ -19,6 +19,11 @@ class TestAmenity(unittest.TestCase):
         self.a2 = Amenity()
         Amenity.name = ''
 
+    def test_create(self):
+        """know egain if i can create a instance."""
+        self.a3 = Amenity()
+        self.assertTrue(hasattr(self.a3, 'id'))
+
     def test_uuid(self):
         """should have a id"""
         self.assertTrue(hasattr(self.a1, 'id'))

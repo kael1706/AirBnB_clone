@@ -29,6 +29,11 @@ class TestPlace(unittest.TestCase):
         Place.longitude = 0.0
         Place.amenity_ids = []
 
+    def test_create(self):
+        """know egain if i can create a instance."""
+        self.p3 = Place()
+        self.assertTrue(hasattr(self.p3, 'id'))
+
     def test_uuid(self):
         """should have a id"""
         self.assertTrue(hasattr(self.p1, 'id'))
