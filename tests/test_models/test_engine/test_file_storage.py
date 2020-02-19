@@ -44,10 +44,63 @@ class TestFileStorageModel(unittest.TestCase):
         self.assertTrue(isinstance(FileStorage._FileStorage__objects, dict))
 
     def test_all(self):
-        """Test the all() method in class FileStorage"""
+        """testing all()"""
         fs2 = FileStorage()
         FileStorage._FileStorage__objects = {'k': 'j'}
         self.assertEqual(FileStorage._FileStorage__objects, fs2.all())
+
+    def test_new(self):
+        """testing new()"""
+        bm1 = BaseModel()
+        cn = bm1.__class__.__name__
+        k = cn + '.' + str(bm1.id)
+        s = FileStorage()
+        s.new(bm1)
+        self.assertIn(k, FileStorage._FileStorage__objects)
+
+    def test_save(self):
+        """testing save()"""
+        bm1 = BaseModel()
+        cn = bm1.__class__.__name__
+        k = cn + '.' + str(bm1.id)
+        s = FileStorage()
+        s.new(bm1)
+        s.save()
+        with open('file.json') as file:
+            self.assertTrue(isinstance(file.read(), str))
+
+    def test_save2(self):
+        """testing save() part 2"""
+        bm1 = BaseModel()
+        cn = bm1.__class__.__name__
+        k = cn + '.' + str(bm1.id)
+        s = FileStorage()
+        s.new(bm1)
+        s.save()
+        with open('file.json') as file:
+            self.assertIn(k, file.read())
+
+    def test_reload(self):
+        """testing reload"""
+        bm1 = BaseModel()
+        cn = bm1.__class__.__name__
+        k = cn + '.' + str(bm1.id)
+        s = FileStorage()
+        s.new(bm1)
+        s.save()
+        self.assertTrue(os.path.exists('file.json'))
+
+    def test_reload2(self):
+        """testing reald part 2"""
+        FileStorage._FileStorage__objects = {}
+        bm1 = BaseModel()
+        cn = bm1.__class__.__name__
+        k = cn + '.' + str(bm1.id)
+        s = FileStorage()
+        s.new(bm1)
+        s.save()
+        s.reload()
+        self.assertIn(k, FileStorage._FileStorage__objects)
 
 if __name__ == '__main__':
     unittest.main()
