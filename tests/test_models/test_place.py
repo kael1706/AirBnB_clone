@@ -6,6 +6,7 @@ import models
 from models.place import Place
 from models.base_model import BaseModel
 from datetime import datetime
+import time
 
 
 class TestPlace(unittest.TestCase):
@@ -14,6 +15,7 @@ class TestPlace(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.p1 = Place()
+        time.sleep(0.2)
         self.p2 = Place()
         Place.city_id = ''
         Place.user_id = ''

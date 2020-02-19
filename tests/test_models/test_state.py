@@ -6,6 +6,7 @@ import models
 from models.state import State
 from models.base_model import BaseModel
 from datetime import datetime
+import time
 
 
 class TestState(unittest.TestCase):
@@ -14,6 +15,7 @@ class TestState(unittest.TestCase):
     def setUp(self):
         """create instances"""
         self.s1 = State()
+        time.sleep(0.2)
         self.s2 = State()
 
     def test_uuid(self):
