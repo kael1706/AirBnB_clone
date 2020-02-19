@@ -15,7 +15,7 @@ class TestPlace(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.p1 = Place()
-        # time.sleep(0.2)
+        time.sleep(0.2)
         self.p2 = Place()
         Place.city_id = ''
         Place.user_id = ''
@@ -28,6 +28,11 @@ class TestPlace(unittest.TestCase):
         Place.latitude = 0.0
         Place.longitude = 0.0
         Place.amenity_ids = []
+
+    def test_create(self):
+        """know egain if i can create a instance."""
+        self.p3 = Place()
+        self.assertTrue(hasattr(self.p3, 'id'))
 
     def test_uuid(self):
         """should have a id"""

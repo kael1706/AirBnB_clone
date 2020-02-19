@@ -18,6 +18,11 @@ class TestState(unittest.TestCase):
         time.sleep(0.2)
         self.s2 = State()
 
+    def test_create(self):
+        """know egain if i can create a instance."""
+        self.s3 = State()
+        self.assertTrue(hasattr(self.s3, 'id'))
+
     def test_uuid(self):
         """know if id exist"""
         self.assertTrue(hasattr(self.s1, 'id'))

@@ -19,6 +19,11 @@ class TestCity(unittest.TestCase):
         self.c2 = City()
         City.state_id = ''
         City.name = ''
+    
+    def test_create(self):
+        """know egain if i can create a instance."""
+        self.c3 = City()
+        self.assertTrue(hasattr(self.c3, 'id'))
 
     def test_uuid(self):
         """should have a id"""
