@@ -15,7 +15,7 @@ class TestUser(unittest.TestCase):
     def setUp(self):
         """should can"""
         self.u1 = User()
-        # time.sleep(0.2)
+        time.sleep(0.2)
         self.u2 = User()
         User.email = ''
         User.password = ''
@@ -136,6 +136,32 @@ class TestUser(unittest.TestCase):
         output = "[{}] ({}) {}".format(
             self.u1.__class__.__name__, self.u1.id, self.u1.__dict__)
         self.assertEqual(str(self.u1), output)
+
+    def test_docstring(self):
+        """test docstring for the module and the class"""
+
+        self.assertIsNotNone(models.user.__doc__,
+            "No docstring in the module"
+                                        )
+        self.assertIsNotNone(User.__doc__, "No docstring in the class")
+
+    def test_permissions_file(self):
+        """Test File user.py permissions"""
+
+        test_file = os.access("models/user.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/user.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/user.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
+
+    def test_type_object(self):
+        """Test type object of User"""
+
+        self.assertEqual(
+            str(type(self.u1)),
+            "<class 'models.user.User'>")
+        self.assertIsInstance(self.u1, User)
 
 if __name__ == '__main__':
     unittest.main()
