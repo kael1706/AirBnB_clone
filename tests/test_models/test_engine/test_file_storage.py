@@ -102,5 +102,15 @@ class TestFileStorageModel(unittest.TestCase):
         s.reload()
         self.assertIn(k, FileStorage._FileStorage__objects)
 
+    def test_permissions_file(self):
+        """Test File test_file_storage.py permissions"""
+
+        test_file = os.access("models/engine/file_storage.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/engine/file_storage.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/engine/file_storage.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
+
 if __name__ == '__main__':
     unittest.main()
