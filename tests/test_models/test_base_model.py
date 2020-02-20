@@ -96,13 +96,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(str(self.bm1), output)
 
     def test_permissions_file(self):
-        """Test File test_base_model.py permissions"""
+        """Test File base_model.py permissions"""
 
-        test_file = os.access("models/test_base_model.py", os.R_OK)
+        test_file = os.access("models/base_model.py", os.R_OK)
         self.assertTrue(test_file, "Read permissions")
-        test_file = os.access("models/test_base_model.py", os.W_OK)
+        test_file = os.access("models/base_model.py", os.W_OK)
         self.assertTrue(test_file, "Write Permissions")
-        test_file = os.access("models/test_base_model.py", os.X_OK)
+        test_file = os.access("models/base_model.py", os.X_OK)
         self.assertTrue(test_file, "Execute permissions")
 
 if __name__ == '__main__':

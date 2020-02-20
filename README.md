@@ -6,9 +6,18 @@ Web application that simulates some of the features of Airbnb for academic purpo
 In this moment we are the first part "the console"
 The console is a way of using the typical functionalities of an administrative panel (for example CRUD) but without a graphical interface because, as its name implies, it is done from a command console.
 
+### Components diagram
+
 <img src="./assets/step1.png"
-     alt="Markdown Monster icon"
+     alt="img components"
      style="float: left; margin-right: 10px;" />
+
+### Database UML
+
+<img src="./assets/uml.png"
+     alt="img uml"
+     style="float: left; margin-right: 10px;" />
+
 
 ## Prerequisites 📋
 
@@ -67,22 +76,22 @@ Available classes: BaseModel, User, Place, State, City, Amenity and Review
 
 | Command| Syntax| Description|
 |---|---|---|
-|create|`create <class>`|...|
-|show|`show <class> <id>`|...|
-|destroy|`destroy <class> <id>`|...|
-|all|`all <class>`|...|
-|all|`all`|...|
-|update|`update <class> <attr_name> <new_value>`|...|
+|create|`create <class>`|create a object|
+|show|`show <class> <id>`|show an specific object|
+|destroy|`destroy <class> <id>`|destroy an specific object|
+|all|`all <class>`|show all objects by class|
+|all|`all`|show all objects|
+|update|`update <class> <attr_name> <new_value>`|update an object with the new values|
 
 other way...
 
 | Command| Syntax| Description|
 |---|---|---|
-|all|`<class name>.all()`|...|
-|count|`<class name>.count()`|...|
-|show|`<class name>.show(<id>)`|...|
-|destroy|`<class name>.destroy(<id>)`|...|
-|update|`<class name>.update(<id>, <attribute name>, <attribute value>)`|...|
+|all|`<class name>.all()`|show all objects by class|
+|count|`<class name>.count()`|a counter of specific class|
+|show|`<class name>.show(<id>)`|show an specific object|
+|destroy|`<class name>.destroy(<id>)`|destroy an specific object|
+|update|`<class name>.update(<id>, <attribute name>, <attribute value>)`|update an object with the new values|
 
 
 3. Press the enter button
