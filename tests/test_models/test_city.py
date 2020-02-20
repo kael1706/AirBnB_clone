@@ -15,7 +15,7 @@ class TestCity(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.c1 = City()
-        time.sleep(0.2)
+        time.sleep(1)
         self.c2 = City()
         City.state_id = ''
         City.name = ''

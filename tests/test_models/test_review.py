@@ -15,7 +15,7 @@ class TestReview(unittest.TestCase):
     def setUp(self):
         """create a instance"""
         self.r1 = Review()
-        time.sleep(0.2)
+        time.sleep(1)
         self.r2 = Review()
         Review.place_id = ''
         Review.user_id = ''

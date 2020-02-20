@@ -14,7 +14,7 @@ class TestBaseModel(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.bm1 = BaseModel()
-        time.sleep(0.2)
+        time.sleep(1)
         self.bm2 = BaseModel()
 
     def test_uuid(self):
