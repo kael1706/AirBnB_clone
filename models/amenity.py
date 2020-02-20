@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-pending
+Amenity class module
 """
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """pending"""
+    """Amenity class"""
 
     name = ''

@@ -14,7 +14,7 @@ The console is a way of using the typical functionalities of an administrative p
 
 ### Database UML
 
-<img src="./assets/uml.png"
+<img src="./assets/uml.jpg"
      alt="img uml"
      style="float: left; margin-right: 10px;" />
 

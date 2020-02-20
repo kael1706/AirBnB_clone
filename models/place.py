@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-pending
+Place class module
 """
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """pending"""
+    """Place class"""
 
     city_id = ''
     user_id = ''

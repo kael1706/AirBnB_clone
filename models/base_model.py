@@ -12,7 +12,7 @@ class BaseModel():
 
     def __init__(self, *args, **kwargs):
         """
-        pending
+        initialize class BaseModel
         """
         if kwargs:
             for k, v in kwargs.items():
@@ -31,13 +31,9 @@ class BaseModel():
             self.created_at = datetime.now()
             self.updated_at = self.created_at
 
-        """if (kwargs != None):
-            models.storage.new(self)"""
-
     def __str__(self):
         """
-        Instance method that returns an “informal”
-        and nicely printable string representation
+        method that returns printable string representation
         of an instance.
         """
         return "[{}] ({}) {}".format(
@@ -45,7 +41,7 @@ class BaseModel():
 
     def save(self):
         """
-        pending
+        save in FileStorage
         """
         self.updated_at = datetime.now()
         models.storage.new(self)
@@ -53,7 +49,7 @@ class BaseModel():
 
     def to_dict(self):
         """
-        pending
+        object to dictionary
         """
         d = {}
         d['__class__'] = self.__class__.__name__

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-pending
+FileStorage class module
 """
 import json
 from models.base_model import BaseModel
@@ -14,27 +14,27 @@ from models.amenity import Amenity
 
 class FileStorage():
     """
-    pending
+    FileStorage class
     """
     __file_path = 'file.json'
     __objects = {}
 
     def all(self):
         """
-        pending
+        show all objects
         """
         return FileStorage.__objects
 
     def new(self, obj):
         """
-        pending
+        create a new object
         """
         k = obj.__class__.__name__ + '.' + str(obj.id)
         self.__objects[k] = obj
 
     def save(self):
         """
-        pending
+        save the new object in to json file
         """
         d = {}
         for k, v in self.__objects.items():
@@ -44,7 +44,7 @@ class FileStorage():
 
     def reload(self):
         """
-        pending
+        reload objects from json file
         """
         try:
             with open(self.__file_path, 'r', encoding="utf-8") as f:

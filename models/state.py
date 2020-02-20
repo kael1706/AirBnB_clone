@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-pending
+State class module
 """
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """pending"""
+    """State class"""
 
     name = ''

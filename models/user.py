@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-pending
+User class module
 """
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """pending"""
+    """User class"""
 
     email = ''
     password = ''

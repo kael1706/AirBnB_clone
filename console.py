@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-pending
+Console module
 """
 import cmd
 import shlex
@@ -16,7 +16,7 @@ from models.amenity import Amenity
 
 
 class HBNBCommand(cmd.Cmd):
-    """pending"""
+    """HBNBCommand class"""
 
     prompt = '(hbnb) '
 
@@ -41,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, my_input):
         """
-        pending
+        create <class> | create a object 
         """
         try:
             my_cmd = shlex.split(my_input)
@@ -64,7 +64,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, my_input):
         """
-        pending
+        show <class> <id> | show an specific object
+        <class name>.show(<id>) |show an specific object
         """
         try:
             my_cmd = shlex.split(my_input)
@@ -93,7 +94,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, my_input):
         """
-        pending
+        destroy <class> <id> | destroy an specific object
+        <class name>.destroy(<id>) | destroy an specific object
         """
         try:
             my_cmd = shlex.split(my_input)
@@ -122,7 +124,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, my_input):
         """
-        pending
+        all |show all objects
+        all <class> |show all objects by class
+        <class name>.all() | show all objects by class
         """
         try:
             my_cmd = shlex.split(my_input)
@@ -145,7 +149,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, my_input):
         """
-        pending
+        update <class> <attr_name> <new_value> | update an object with the new values
+        <class name>.update(<id>, <attribute name>, <attribute value>) | update an object with the new values
         """
         try:
             my_cmd = shlex.split(my_input)
@@ -208,7 +213,7 @@ class HBNBCommand(cmd.Cmd):
             return my_input
 
     def do_count(self, my_input):
-        """ pending """
+        """<class name>.count() | a counter of specific class"""
         try:
             my_cmd = shlex.split(my_input)
         except Exception:
