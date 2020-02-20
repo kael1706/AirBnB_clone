@@ -133,5 +133,15 @@ class TestReview(unittest.TestCase):
             self.r1.__class__.__name__, self.r1.id, self.r1.__dict__)
         self.assertEqual(str(self.r1), output)
 
+    def test_permissions_file(self):
+        """Test review.py permissions"""
+
+        test_file = os.access("models/review.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/review.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/review.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
+
 if __name__ == '__main__':
     unittest.main()

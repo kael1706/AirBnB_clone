@@ -115,5 +115,15 @@ class TestAmenity(unittest.TestCase):
             self.a1.__class__.__name__, self.a1.id, self.a1.__dict__)
         self.assertEqual(str(self.a1), output)
 
+    def test_permissions_file(self):
+        """Test File amenity.py permissions"""
+
+        test_file = os.access("models/amenity.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/amenity.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/amenity.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
+
 if __name__ == '__main__':
     unittest.main()

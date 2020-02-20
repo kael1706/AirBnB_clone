@@ -124,5 +124,15 @@ class TestCity(unittest.TestCase):
             self.c1.__class__.__name__, self.c1.id, self.c1.__dict__)
         self.assertEqual(str(self.c1), output)
 
+    def test_permissions_file(self):
+        """Test File city.py permissions"""
+
+        test_file = os.access("models/city.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/city.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/city.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
+
 if __name__ == '__main__':
     unittest.main()
