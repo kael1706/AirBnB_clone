@@ -14,7 +14,7 @@ class TestBaseModel(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.bm1 = BaseModel()
-        time.sleep(1)
+        time.sleep(0.2)
         self.bm2 = BaseModel()
 
     def test_uuid(self):
@@ -94,6 +94,16 @@ class TestBaseModel(unittest.TestCase):
         output = "[{}] ({}) {}".format(
             self.bm1.__class__.__name__, self.bm1.id, self.bm1.__dict__)
         self.assertEqual(str(self.bm1), output)
+
+    def test_permissions_file(self):
+        """Test File test_base_model.py permissions"""
+
+        test_file = os.access("models/test_base_model.py", os.R_OK)
+        self.assertTrue(test_file, "Read permissions")
+        test_file = os.access("models/test_base_model.py", os.W_OK)
+        self.assertTrue(test_file, "Write Permissions")
+        test_file = os.access("models/test_base_model.py", os.X_OK)
+        self.assertTrue(test_file, "Execute permissions")
 
 if __name__ == '__main__':
     unittest.main()

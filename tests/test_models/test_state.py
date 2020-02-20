@@ -15,7 +15,7 @@ class TestState(unittest.TestCase):
     def setUp(self):
         """create instances"""
         self.s1 = State()
-        time.sleep(1)
+        time.sleep(0.2)
         self.s2 = State()
 
     def test_create(self):

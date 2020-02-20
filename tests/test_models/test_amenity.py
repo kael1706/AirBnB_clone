@@ -15,7 +15,7 @@ class TestAmenity(unittest.TestCase):
     def setUp(self):
         """know if i can create a instance"""
         self.a1 = Amenity()
-        time.sleep(1)
+        time.sleep(0.2)
         self.a2 = Amenity()
         Amenity.name = ''
 
