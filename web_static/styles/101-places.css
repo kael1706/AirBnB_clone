@@ -62,11 +62,11 @@ section.places .price_by_night{
 }
 
 section.places .information{
-    height: 80px;
     border-top: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 section.places .information div{
@@ -82,10 +82,18 @@ section.places .information div{
 .information .number_bathrooms {
     background: url("../images/icon_bath.png") no-repeat top center;
 }
+
+.information .icon_parking {
+    background: url("../images/icon_parking.svg") no-repeat top center;
+}
+
 .places div.information div.max_guest,
 .places div.information div.number_rooms,
-.places div.information div.number_bathrooms {
+.places div.information div.number_bathrooms,
+.places div.information div.icon_parking {
     padding-top: 50px;
+    background-size: 50px 50px;
+    margin-bottom: 3px;
 }
 .description {
     padding-top: 8px;
