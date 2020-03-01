@@ -82,6 +82,10 @@ section.filters > div:nth-child(1){
     padding-top: 10px;
 }
 
+.amenities .popover li{
+    padding-top: 10px;
+}
+
 .amenities .popover {
     margin-left: -5px;
 }
