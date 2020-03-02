@@ -192,7 +192,7 @@ button a{
     
  }
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 510px) and (max-width: 743px) {
+@media (min-width: 510px) and (max-width: 673px) {
     .not_on_mobile{
         display: none;
     }
