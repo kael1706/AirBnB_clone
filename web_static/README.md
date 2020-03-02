@@ -1,5 +1,14 @@
 # 0x01. AirBnB clone - Web static
 
+## Description
+Second part of the project of AirBnB. It consists of making a first version of HTML with static information
+
+### Components diagram
+
+<img src="../assets/step2.png"
+     alt="img components"
+	 style="float: left; margin-right: 10px;" />
+
 ## Resources:books:
 Read or watch:
 * [Learn to Code HTML & CSS](https://intranet.hbtn.io/rltoken/qq7qrSgdVRuD1kPd_jf7Fw)
